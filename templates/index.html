@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CINEROUTE</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="logo-container">
+
+        <h1 class="logo">
+            CIN<span class="gold">E</span>ROUTE
+        </h1>
+
+        <div class="eswar">
+            eswar
+        </div>
+
+    </div>
+
+    <p class="tagline">
+        Your Route To Telugu OTT Entertainment
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Telugu Movies..."
+            onkeyup="searchMovie()">
+
+    </div>
+
+    <div class="ott-logos">
+
+        <img src="{{ url_for('static',
+        filename='images/netflix.png') }}">
+
+        <img src="{{ url_for('static',
+        filename='images/prime.png') }}">
+
+        <img src="{{ url_for('static',
+        filename='images/hotstar.png') }}">
+
+    </div>
+
+    <h2 class="heading">
+        Trending Telugu Movies
+    </h2>
+
+    <div class="movies">
+
+        {% for movie, details in movies.items() %}
+
+        <div class="card">
+
+            <img class="poster"
+                 src="{{ url_for('static',
+                 filename='images/posters/' +
+                 details.image ) }}">
+
+            <h3>
+                {{ movie }}
+            </h3>
+
+            <p>
+                {{ details.ott }}
+            </p>
+
+            <a href="{{ details.link }}"
+               target="_blank">
+
+                <button>
+                    Watch Now
+                </button>
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+<script>
+
+function searchMovie(){
+
+    let input =
+    document.getElementById(
+    "search").value.toUpperCase();
+
+    let cards =
+    document.getElementsByClassName(
+    "card");
+
+    for(let i=0;i<cards.length;i++){
+
+        let title =
+        cards[i]
+        .getElementsByTagName(
+        "h3")[0];
+
+        if(title.innerHTML
+        .toUpperCase()
+        .indexOf(input)>-1){
+
+            cards[i].style.display="";
+
+        }
+
+        else{
+
+            cards[i].style.display=
+            "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
