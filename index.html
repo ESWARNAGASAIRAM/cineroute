@@ -1,126 +1,143 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CINEROUTE</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+<div class="movies">
 
-<body>
-
-    <div class="logo-container">
-
-        <h1 class="logo">
-            CIN<span class="gold">E</span>ROUTE
-        </h1>
-
-        <div class="eswar">
-            eswar
-        </div>
-
+    <div class="card">
+        <img class="poster" src="static/images/posters/kalki.jpg">
+        <h3>Kalki 2898 AD</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
     </div>
 
-    <p class="tagline">
-        Your Route To Telugu OTT Entertainment
-    </p>
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="search"
-            placeholder="Search Telugu Movies..."
-            onkeyup="searchMovie()">
-
+    <div class="card">
+        <img class="poster" src="static/images/posters/pushpa.jpg">
+        <h3>Pushpa</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
     </div>
 
-    <div class="ott-logos">
-
-        <img src="{{ url_for('static',
-        filename='images/netflix.png') }}">
-
-        <img src="{{ url_for('static',
-        filename='images/prime.png') }}">
-
-        <img src="{{ url_for('static',
-        filename='images/hotstar.png') }}">
-
+    <div class="card">
+        <img class="poster" src="static/images/posters/pushpa2.jpg">
+        <h3>Pushpa 2</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
     </div>
 
-    <h2 class="heading">
-        Trending Telugu Movies
-    </h2>
-
-    <div class="movies">
-
-        {% for movie, details in movies.items() %}
-
-        <div class="card">
-
-            <img class="poster"
-                 src="{{ url_for('static',
-                 filename='images/posters/' +
-                 details.image ) }}">
-
-            <h3>
-                {{ movie }}
-            </h3>
-
-            <p>
-                {{ details.ott }}
-            </p>
-
-            <a href="{{ details.link }}"
-               target="_blank">
-
-                <button>
-                    Watch Now
-                </button>
-
-            </a>
-
-        </div>
-
-        {% endfor %}
-
+    <div class="card">
+        <img class="poster" src="static/images/posters/salaar.jpg">
+        <h3>Salaar</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
     </div>
 
-<script>
+    <div class="card">
+        <img class="poster" src="static/images/posters/dasara.jpg">
+        <h3>Dasara</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-function searchMovie(){
+    <div class="card">
+        <img class="poster" src="static/images/posters/luckybaskar.jpg">
+        <h3>Lucky Baskhar</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-    let input =
-    document.getElementById(
-    "search").value.toUpperCase();
+    <div class="card">
+        <img class="poster" src="static/images/posters/gunturkaram.jpg">
+        <h3>Guntur Kaaram</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-    let cards =
-    document.getElementsByClassName(
-    "card");
+    <div class="card">
+        <img class="poster" src="static/images/posters/hinanna.jpg">
+        <h3>Hi Nanna</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com/title/81682028" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-    for(let i=0;i<cards.length;i++){
+    <div class="card">
+        <img class="poster" src="static/images/posters/major.jpg">
+        <h3>Major</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-        let title =
-        cards[i]
-        .getElementsByTagName(
-        "h3")[0];
+    <div class="card">
+        <img class="poster" src="static/images/posters/mad.jpg">
+        <h3>MAD</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-        if(title.innerHTML
-        .toUpperCase()
-        .indexOf(input)>-1){
+    <div class="card">
+        <img class="poster" src="static/images/posters/virupaksha.jpg">
+        <h3>Virupaksha</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-            cards[i].style.display="";
+    <div class="card">
+        <img class="poster" src="static/images/posters/sitaramam.jpg">
+        <h3>Sita Ramam</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-        }
+    <div class="card">
+        <img class="poster" src="static/images/posters/saripodhaa.jpg">
+        <h3>Saripodhaa Sanivaaram</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-        else{
+    <div class="card">
+        <img class="poster" src="static/images/posters/tillusquare.jpg">
+        <h3>Tillu Square</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-            cards[i].style.display=
-            "none";
-        }
-    }
-}
+    <div class="card">
+        <img class="poster" src="static/images/posters/khaleja.jpg">
+        <h3>Khaleja</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-</script>
+    <div class="card">
+        <img class="poster" src="static/images/posters/eega.jpg">
+        <h3>Eega</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
 
-</body>
-</html>
+    <div class="card">
+        <img class="poster" src="static/images/posters/devara.jpg">
+        <h3>Devara</h3>
+        <p>Netflix</p>
+        <a href="https://www.netflix.com" target="_blank"><button>Watch Now</button></a>
+    </div>
+
+    <div class="card">
+        <img class="poster" src="static/images/posters/arjunreddy.jpg">
+        <h3>Arjun Reddy</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
+
+    <div class="card">
+        <img class="poster" src="static/images/posters/dearcomrade.jpg">
+        <h3>Dear Comrade</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
+
+    <div class="card">
+        <img class="poster" src="static/images/posters/geethagovindham.jpg">
+        <h3>Geetha Govindam</h3>
+        <p>Prime Video</p>
+        <a href="https://www.primevideo.com" target="_blank"><button>Watch Now</button></a>
+    </div>
+
+</div>
